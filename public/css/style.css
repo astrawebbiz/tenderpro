@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html,
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #201D1D;
+    font-family: Roboto, "Arial", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    background-color: #F9F9F9;
+    padding: 80px 32px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    line-height: 100%;
+}
+
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #969595;
+    font-size: 14px;
+    display: flex;
+    gap: 5px;
+}
+
+.breadcrumbs__item {
+    position: relative;
+}
+
+.breadcrumbs__item::after {
+    content: "—";
+}
+
+.breadcrumbs__item:last-child::after {
+    content: "";
+}
+
+.breadcrumbs__link {
+    color: #969595;
+    text-decoration: none;
+}
+
+.companies-list__breadcrumbs {
+    margin-bottom: 12px;
+}
+
+.companies-list__title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.companies-list__statistic {
+    color: #969595;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+    display: none;
+}
+
+.table__header {
+    color: #969595;
+}
+
+.table {
+    border: 1px solid #E4E4E4;
+    border-bottom: 0;
+    margin-bottom: 20px;
+}
+
+.table__row {
+    display: grid;
+    grid-template-columns: minmax(72px, 4%) 1fr;
+    border-bottom: 1px solid #E4E4E4;
+    background: #ffffff;
+}
+
+.table__td {
+    padding: 12px 24px 10px;
+    box-sizing: border-box;
+}
+
+.companies-list__paginator {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 500;
+}
+
+.companies-list__paginator li {
+    border: 1px solid #F9F9F9;
+    color: #201D1D;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    overflow: hidden;
+}
+
+.companies-list__paginator li:hover {
+    border: 1px solid #000000;
+}
+
+.companies-list__paginator .active, .companies-list__paginator .active:hover {
+    border: 1px solid red;
+}
+
+.companies-list__paginator .page-link {
+    text-decoration: none;
+    color: #201D1D;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    display: inline-block;
+}
+
+.companies-list__paginator .disabled {
+    opacity: .5;
+}
+
+.companies-list__paginator .disabled:hover {
+    border: 1px solid #F9F9F9;
+}
+
+.companies-list__paginator .prev, .companies-list__paginator .next {
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    background: url('../img/keyboard_arrow_right.png') no-repeat 50% 50%;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.companies-list__paginator .next {
+    transform: rotate(-180deg);
+}
+
+.companies-list__nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    margin-top: 80px;
+    padding: 80px 0;
+    font-size: 10px;
+}
+
+@media (max-width: 1440px) {
+    .companies-list__statistic {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 744px) {
+    body {
+        padding: 80px 0;
+    }
+
+    header, .breadcrumbs, .companies-list__title, .companies-list__nav, footer {
+        padding: 0 24px;
+    }
+
+    .companies-list__statistic {
+        display: none;
+    }
+}
+
+@media (max-width: 378px) {
+    header, .breadcrumbs, .companies-list__title, .companies-list__nav, footer {
+        padding: 0 16px;
+    }
+
+    .companies-list__title {
+        font-size: 21px;
+        line-height: 28px;
+    }
+
+    .table__td {
+        padding: 12px 16px 10px;
+    }
+
+    .companies-list__nav {
+        flex-direction: column;
+    }
+
+    .companies-list__paginator {
+        margin-bottom: 12px;
+    }
+
+    .companies-list__statistic {
+        display: block;
+    }
+}
